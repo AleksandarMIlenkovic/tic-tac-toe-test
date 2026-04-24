@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UXML xmlns="UnityEngine.UIElements" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="UnityEngine.UIElements doc.com">
+
+    <!-- Game Container -->
+    <VisualElement name="GameContainer" class="game-container">
+
+        <!-- Header HUD -->
+        <VisualElement name="GameHeader" class="game-header">
+            <VisualElement name="HeaderLeft" class="header-left">
+                <Label name="Player1Label" text="Player 1" class="player-label"/>
+                <Label name="Player1Moves" text="Moves: 0" class="player-moves"/>
+            </VisualElement>
+            <VisualElement name="HeaderCenter" class="header-center">
+                <Label name="Timer" text="00:00" class="timer"/>
+                <Label name="TurnIndicator" text="Player 1's Turn" class="turn-indicator player1"/>
+            </VisualElement>
+            <VisualElement name="HeaderRight" class="header-right">
+                <Label name="Player2Label" text="Player 2" class="player-label"/>
+                <Label name="Player2Moves" text="Moves: 0" class="player-moves"/>
+                <Button name="SettingsButton" text="⚙" class="settings-btn-small"/>
+            </VisualElement>
+        </VisualElement>
+
+        <!-- Game Board -->
+        <VisualElement name="BoardContainer" class="game-board-container">
+            <VisualElement name="GameBoard" class="game-board">
+                <!-- Row 1 -->
+                <VisualElement name="Cell0" class="board-cell">
+                    <Label name="CellMark" class="cell-icon"/>
+                </VisualElement>
+                <VisualElement name="Cell1" class="board-cell">
+                    <Label name="CellMark" class="cell-icon"/>
+                </VisualElement>
+                <VisualElement name="Cell2" class="board-cell">
+                    <Label name="CellMark" class="cell-icon"/>
+                </VisualElement>
+                <!-- Row 2 -->
+                <VisualElement name="Cell3" class="board-cell">
+                    <Label name="CellMark" class="cell-icon"/>
+                </VisualElement>
+                <VisualElement name="Cell4" class="board-cell">
+                    <Label name="CellMark" class="cell-icon"/>
+                </VisualElement>
+                <VisualElement name="Cell5" class="board-cell">
+                    <Label name="CellMark" class="cell-icon"/>
+                </VisualElement>
+                <!-- Row 3 -->
+                <VisualElement name="Cell6" class="board-cell">
+                    <Label name="CellMark" class="cell-icon"/>
+                </VisualElement>
+                <VisualElement name="Cell7" class="board-cell">
+                    <Label name="CellMark" class="cell-icon"/>
+                </VisualElement>
+                <VisualElement name="Cell8" class="board-cell">
+                    <Label name="CellMark" class="cell-icon"/>
+                </VisualElement>
+            </VisualElement>
+        </VisualElement>
+
+    </VisualElement>
+
+    <!-- Game Over Popup -->
+    <VisualElement name="GameOverPopup" class="game-over-overlay">
+        <VisualElement class="game-over-popup">
+            <Label name="ResultText" text="Player 1 Wins!" class="game-result-text"/>
+            <Label name="DurationText" text="Duration: 00:00" class="game-duration-text"/>
+            <VisualElement class="popup-buttons">
+                <Button name="RetryButton" text="Retry" class="popup-button primary"/>
+                <Button name="ExitButton" text="Exit" class="popup-button"/>
+            </VisualElement>
+        </VisualElement>
+    </VisualElement>
+
+    <!-- Settings Popup (reused from MainMenu) -->
+    <VisualElement name="SettingsPopup" class="popup-overlay">
+        <VisualElement class="popup-container">
+            <Label name="Title" text="Settings" class="popup-title"/>
+            <VisualElement name="SettingsContent" class="popup-content">
+                <VisualElement class="toggle-row">
+                    <Label name="Label" text="Background Music" class="toggle-label"/>
+                    <Toggle name="BGMToggle"/>
+                </VisualElement>
+                <VisualElement class="toggle-row">
+                    <Label name="Label" text="Sound Effects" class="toggle-label"/>
+                    <Toggle name="SFXToggle"/>
+                </VisualElement>
+            </VisualElement>
+            <VisualElement class="popup-buttons">
+                <Button name="SettingsClose" text="Close" class="popup-button primary"/>
+            </VisualElement>
+        </VisualElement>
+    </VisualElement>
+
+</UXML>

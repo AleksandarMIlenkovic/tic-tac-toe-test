@@ -1,0 +1,52 @@
+SE Homework Assignment
+SE Homework Assignment.zip
+Project Overview: Develop a Tic-Tac-Toe mini-game in Unity. The game is designed for
+local multiplayer (two players on a single device) and must support both Portrait and
+Landscape orientations.
+Scene Structure
+1. Play Scene (Main Menu)
+The scene should contain three main buttons:
+● Play Button: On click, opens a popup to select the "XO" theme. This popup should
+also contain a "Start" button to transition to the Game Scene.
+● Stats Button: Opens a statistics popup. Statistics must include:
+○ Total games played.
+○ Win count for Player 1 and Player 2.
+○ Number of draws.
+○ Average game duration.
+● Settings Button: Opens a popup with two toggles to enable/disable Background
+Music and Sound Effects (SFX), respectively.
+● Exit Button: Opens a confirmation popup to quit the game.
+2. Game Scene
+This scene contains the gameplay board and the HUD.
+● Gameplay: A 3x3 grid where players alternate placing X and O marks. When a
+player connects three in a row, the game ends with a "Strike" animation.
+● HUD (Heads-Up Display): Displays the current match duration, the move count for
+both players, and a Settings button (identical to the one in the Play Scene).
+● Game Over Popup: Appears at the end of the match. It should display the result
+(e.g., "Player 1 Wins" or "Draw") and the match duration.
+○ Buttons: "Retry" (restarts the match) and "Exit" (returns to the Play Scene).
+
+Required Popups
+● Theme Selection: (From Play Scene) For choosing the visual style of game
+elements.
+● Statistics: (From Play Scene) Displaying accumulated data.
+● Exit Confirmation: (From Play Scene) To quit the application.
+● Settings: (From both scenes) For audio toggles.
+
+● Game Result: (In Game Scene) Triggered upon match completion.
+Audio Requirements
+● Background Music (BGM).
+● Button Click SFX.
+● Placement SFX (when a mark is placed on the board).
+● Strike/Win SFX.
+● Popup Animation SFX.
+
+Additional Instructions
+● Assets: Use the provided graphics and audio. You are encouraged to add missing
+assets, visual effects (VFX), or extra animations to polish the "Look & Feel."
+● Persistence: The game should save statistics between sessions.
+● Prioritization: Complete as much as possible within the deadline. Evaluation will be
+based on the following priorities:
+1. Functionality & Playability: The core game loop must work perfectly.
+2. Code Quality & Readability: Clean, organized, and professional code.
+3. Look & Feel: Overall polish, completeness, and feature count.

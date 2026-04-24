@@ -1,0 +1,249 @@
+.game-container {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(30, 30, 40);
+    align-items: center;
+    flex-direction: column;
+}
+
+.game-header {
+    width: 100%;
+    height: 80px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.header-left {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.header-right {
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.player-label {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.player-moves {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.timer {
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+}
+
+.settings-btn-small {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    border-width: 0;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.settings-btn-small:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.game-board-container {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-board {
+    width: 90%;
+    max-width: 350px;
+    aspect-ratio: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 8px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.board-cell {
+    width: 32%;
+    height: 32%;
+    margin: 0.5%;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.board-cell:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.board-cell.filled {
+    cursor: default;
+}
+
+.cell-icon {
+    width: 80%;
+    height: 80%;
+    -unity-text-align: center;
+    font-size: 48px;
+}
+
+.cell-icon.x {
+    color: rgb(220, 50, 50);
+}
+
+.cell-icon.o {
+    color: rgb(50, 100, 220);
+}
+
+.board-cell.strike {
+    background-color: rgba(255, 215, 0, 0.4);
+}
+
+.game-over-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.game-over-overlay.visible {
+    display: flex;
+}
+
+.game-over-popup {
+    background-color: white;
+    border-radius: 16px;
+    padding: 35px;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+}
+
+.game-result-text {
+    font-size: 32px;
+    color: #333;
+    -unity-text-align: center;
+    margin-bottom: 10px;
+}
+
+.game-duration-text {
+    font-size: 16px;
+    color: #666;
+    -unity-text-align: center;
+    margin-bottom: 25px;
+}
+
+.turn-indicator {
+    font-size: 18px;
+    color: white;
+    -unity-text-align: center;
+    margin-bottom: 15px;
+}
+
+.turn-indicator.player1 {
+    color: rgb(220, 50, 50);
+}
+
+.turn-indicator.player2 {
+    color: rgb(50, 100, 220);
+}
+
+.popup-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.popup-container {
+    width: 80%;
+    max-width: 380px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 30px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.popup-title {
+    font-size: 26px;
+    color: #333;
+    -unity-text-align: center;
+    margin-bottom: 25px;
+}
+
+.popup-content {
+    flex: 1;
+    width: 100%;
+    align-items: center;
+}
+
+.toggle-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom-width: 1px;
+    border-bottom-color: #e8e8e8;
+}
+
+.toggle-label {
+    font-size: 17px;
+    color: #333;
+}
+
+.popup-buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.popup-button {
+    min-width: 110px;
+    height: 48px;
+    background-color: rgb(140, 140, 140);
+    border-radius: 8px;
+    border-width: 0;
+    color: white;
+    font-size: 16px;
+    -unity-text-align: center;
+    cursor: pointer;
+}
+
+.popup-button:hover {
+    background-color: rgb(160, 160, 160);
+}
+
+.popup-button.primary {
+    background-color: rgb(74, 144, 217);
+}
+
+.popup-button.primary:hover {
+    background-color: rgb(100, 170, 240);
+}

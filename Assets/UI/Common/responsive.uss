@@ -1,0 +1,173 @@
+/* Portrait / Phone Layout */
+@media (orientation: portrait), (max-width: 600px) {
+    .menu-title {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    .menu-button {
+        width: 180px;
+        height: 48px;
+        font-size: 18px;
+    }
+
+    .menu-buttons {
+        spacing: 15px;
+    }
+
+    .popup-container {
+        width: 90%;
+        max-width: 320px;
+        padding: 20px;
+    }
+
+    .popup-title {
+        font-size: 22px;
+    }
+
+    .game-header {
+        height: 60px;
+        padding: 0 10px;
+    }
+
+    .player-label {
+        font-size: 14px;
+    }
+
+    .player-moves {
+        font-size: 12px;
+    }
+
+    .timer {
+        font-size: 22px;
+    }
+
+    .turn-indicator {
+        font-size: 14px;
+    }
+
+    .game-board {
+        max-width: 280px;
+    }
+
+    .cell-icon {
+        font-size: 36px;
+    }
+
+    .game-result-text {
+        font-size: 26px;
+    }
+}
+
+/* Landscape / Tablet Desktop Layout */
+@media (orientation: landscape) and (min-width: 800px) {
+    .menu-title {
+        font-size: 56px;
+        margin-bottom: 70px;
+    }
+
+    .menu-button {
+        width: 260px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    .menu-buttons {
+        spacing: 25px;
+    }
+
+    .popup-container {
+        max-width: 450px;
+        padding: 35px;
+    }
+
+    .popup-title {
+        font-size: 30px;
+    }
+
+    .game-header {
+        height: 90px;
+        padding: 0 30px;
+    }
+
+    .player-label {
+        font-size: 18px;
+    }
+
+    .player-moves {
+        font-size: 15px;
+    }
+
+    .timer {
+        font-size: 32px;
+    }
+
+    .turn-indicator {
+        font-size: 20px;
+    }
+
+    .game-board {
+        max-width: 400px;
+    }
+
+    .cell-icon {
+        font-size: 56px;
+    }
+
+    .game-result-text {
+        font-size: 36px;
+    }
+}
+
+/* Small Phone Layout */
+@media (max-width: 400px) {
+    .menu-title {
+        font-size: 28px;
+    }
+
+    .menu-button {
+        width: 150px;
+        height: 42px;
+        font-size: 16px;
+    }
+
+    .popup-container {
+        width: 85%;
+        padding: 15px;
+    }
+
+    .theme-option {
+        height: 55px;
+    }
+
+    .theme-name {
+        font-size: 14px;
+    }
+
+    .stats-row {
+        padding: 8px 0;
+    }
+
+    .stats-label,
+    .stats-value {
+        font-size: 14px;
+    }
+
+    .toggle-label {
+        font-size: 14px;
+    }
+
+    .popup-button {
+        min-width: 80px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .game-header {
+        height: 50px;
+    }
+
+    .timer {
+        font-size: 18px;
+    }
+}

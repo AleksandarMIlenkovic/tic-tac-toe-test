@@ -41,7 +41,6 @@ crashlytics-build.properties
 # Nuke Build
 /.nuke/temp/
 /.nuke/output/
-/WebGL/
 
 # IDEs
 .vs/

@@ -20,12 +20,38 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Fix Unity WebGL paths
+        run: |
+          python3 -c "
+          import os, re
+          html_path = 'WebGL/index.html'
+          if not os.path.exists(html_path):
+              print('index.html not found')
+              exit(1)
+          with open(html_path, 'r') as f:
+              content = f.read()
+          # Fix paths that point to root instead of Build/
+          content = re.sub(r'src=\"([^\"]*\.loader\.js)\"', r'src=\"Build/\1\"', content)
+          content = re.sub(r'src=\"([^\"]*\.framework\.js)\"', r'src=\"Build/\1\"', content)
+          content = re.sub(r'\"([^\"]*\.data\.gz)\"', r'\"Build/\1\"', content)
+          content = re.sub(r'\"([^\"]*\.data)\"', r'\"Build/\1\"', content)
+          content = re.sub(r'\"([^\"]*\.wasm\.gz)\"', r'\"Build/\1\"', content)
+          content = re.sub(r'\"([^\"]*\.wasm)\"', r'\"Build/\1\"', content)
+          # Remove double Build/
+          content = content.replace('Build/Build/', 'Build/')
+          with open(html_path, 'w') as f:
+              f.write(content)
+          print('Fixed Unity WebGL paths')
+          "
+
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

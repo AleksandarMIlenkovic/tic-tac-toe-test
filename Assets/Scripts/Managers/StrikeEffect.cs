@@ -7,7 +7,6 @@ public class StrikeEffect : MonoBehaviour
     public static StrikeEffect Instance => _instance;
 
     private VisualElement[] _cells;
-    private Color _strikeColor = new Color(1f, 0.84f, 0f);
 
     private void Awake()
     {
@@ -35,6 +34,7 @@ public class StrikeEffect : MonoBehaviour
 
     private System.Collections.IEnumerator AnimateStrikeLine(int[] line)
     {
+        Color strikeColor = GetStrikeColor();
         float duration = 0.5f;
         float elapsed = 0f;
 
@@ -47,7 +47,7 @@ public class StrikeEffect : MonoBehaviour
             {
                 if (i >= 0 && i < _cells.Length)
                 {
-                    var color = _strikeColor;
+                    var color = strikeColor;
                     color.a = pulse;
                     _cells[i].style.backgroundColor = new StyleColor(color);
                 }
@@ -57,14 +57,27 @@ public class StrikeEffect : MonoBehaviour
             yield return null;
         }
 
+        strikeColor.a = 0.6f;
         for (int i = 0; i < 3; i++)
         {
             int cellIndex = line[i];
             if (cellIndex >= 0 && cellIndex < _cells.Length)
             {
-                _cells[cellIndex].style.backgroundColor = new StyleColor(new Color(1f, 0.84f, 0f, 0.6f));
+                _cells[cellIndex].style.backgroundColor = new StyleColor(strikeColor);
             }
         }
+    }
+
+    private Color GetStrikeColor()
+    {
+        var theme = ThemeManager.Instance?.CurrentTheme;
+        if (theme != null)
+        {
+            Color avg = (theme.XColor + theme.OColor) * 0.5f;
+            avg.a = 1f;
+            return avg;
+        }
+        return new Color(1f, 0.84f, 0f);
     }
 
     public void ClearStrikeEffect()

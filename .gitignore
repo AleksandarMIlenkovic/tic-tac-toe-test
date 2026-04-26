@@ -2,6 +2,7 @@
 [Tt]emp/
 [Oo]bj/
 [Bb]uild/
+!WebGL/[Bb]uild/
 [Bb]uilds/
 [Ll]ogs/
 [Uu]ser[Ss]ettings/

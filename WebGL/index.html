@@ -56,13 +56,13 @@
         updateBannerVisibility();
       }
 
-var buildUrl = new URL("Build", window.location.href).href;
+var buildUrl = "Build";
 var loaderUrl = buildUrl + "/WebGL.loader.js";
 var config = {
   dataUrl: buildUrl + "/WebGL.data.gz",
   frameworkUrl: buildUrl + "/WebGL.framework.js.gz",
   codeUrl: buildUrl + "/WebGL.wasm.gz",
-  streamingAssetsUrl: new URL("StreamingAssets", window.location.href).href,
+  streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "tic-tac-toe",
         productVersion: "0.1",

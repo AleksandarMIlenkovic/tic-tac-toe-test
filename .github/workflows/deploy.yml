@@ -26,53 +26,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Fix Unity WebGL paths
-        run: |
-          python3 -c "
-          import os, glob, re
-
-          html_path = 'WebGL/index.html'
-          if not os.path.exists(html_path):
-              print('index.html not found, listing WebGL contents:')
-              os.system('find WebGL/ -type f')
-              exit(1)
-
-          with open(html_path, 'r') as f:
-              content = f.read()
-
-          # Find what the build folder actually contains
-          loader_files = glob.glob('WebGL/Build/*.loader.js')
-          if loader_files:
-              loader_name = os.path.basename(loader_files[0])
-              framework_files = glob.glob('WebGL/Build/*.framework.js')
-              data_files = glob.glob('WebGL/Build/*.data') + glob.glob('WebGL/Build/*.data.gz')
-              wasm_files = glob.glob('WebGL/Build/*.wasm') + glob.glob('WebGL/Build/*.wasm.gz')
-
-              # Replace ALL asset references with Build/ prefixed versions
-              # Match both quoted strings and bare filenames in script src
-              if loader_name:
-                  content = re.sub(r'[\"\\']([^\"\\']*\.loader\.js)[\"\\']', f'\"Build/{loader_name}\"', content)
-              for ff in framework_files:
-                  fn = os.path.basename(ff)
-                  content = re.sub(r'[\"\\']([^\"\\']*\.framework\.js)[\"\\']', f'\"Build/{fn}\"', content)
-              for df in data_files:
-                  fn = os.path.basename(df)
-                  content = re.sub(r'[\"\\']([^\"\\']*\\.data(?:\\.gz)?)[\"\\']', f'\"Build/{fn}\"', content)
-              for wf in wasm_files:
-                  fn = os.path.basename(wf)
-                  content = re.sub(r'[\"\\']([^\"\\']*\\.wasm(?:\\.gz)?)[\"\\']', f'\"Build/{fn}\"', content)
-
-              # Remove double Build/
-              content = content.replace('Build/Build/', 'Build/')
-
-          with open(html_path, 'w') as f:
-              f.write(content)
-
-          print('Fixed Unity WebGL paths')
-          print('Loader files found:', loader_files)
-          "
-
-      - name: Setup Pages
+  - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact

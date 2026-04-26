@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Unity WebGL Player | tic-tac-toe</title>
-  <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <title>Unity WebGL Player | tic-tac-toe</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
@@ -56,13 +56,13 @@
         updateBannerVisibility();
       }
 
-var buildUrl = "Build";
-var loaderUrl = buildUrl + "/WebGL.loader.js";
-var config = {
-  dataUrl: buildUrl + "/WebGL.data.gz",
-  frameworkUrl: buildUrl + "/WebGL.framework.js.gz",
-  codeUrl: buildUrl + "/WebGL.wasm.gz",
-  streamingAssetsUrl: "StreamingAssets",
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/WebGL.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/WebGL.data",
+        frameworkUrl: buildUrl + "/WebGL.framework.js",
+        codeUrl: buildUrl + "/WebGL.wasm",
+        streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "tic-tac-toe",
         productVersion: "0.1",
